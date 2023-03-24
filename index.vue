@@ -1,4 +1,0 @@
-<template>
-    <h1>hello world</h1>
-    <p>testing</p>
-</template>
