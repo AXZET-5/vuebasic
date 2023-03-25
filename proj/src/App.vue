@@ -24,10 +24,8 @@
         console.log(path);
 
         var image = document.getElementById('toChange');
-        image.src = path;
-
-        var content = image.innerHTML;
-        image.innerHTML = content;
+        const newImage = document.createElement('img', {src: 'path'});
+        image.replaceWith(newImage);
       }
     }
   }
