@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <h1>Sticker Generator</h1>
+    <h1 id="toChange">Sticker Generator</h1>
     <div class="ContainingBox">
-      <img src="./assets/image.png" id="toChange">
+      <h1>Hi</h1>
     </div>
     <br>
     <p>Click any of these buttons to generate the corresponding sticker!</p>
-    <button @click="switchToSticker('default')" type="button">Default 🙂</button>
-    <button @click="switchToSticker('starry')" type="button">Starry 🤩</button>
-    <button @click="switchToSticker('lovely')" type="button">Lovely 😍</button>
-    <button @click="switchToSticker('winking')" type="button">Winking 😉</button>
-    <button @click="switchToSticker('pleading')" type="button">Pleading 🥺👉👈</button>
+    <button @click="switchTo(1)" type="button">1</button>
+    <button @click="switchTo(2)" type="button">2</button>
+    <button @click="switchTo(3)" type="button">3</button>
+    <button @click="switchTo(4)" type="button">4</button>
+    <button @click="switchTo(5)" type="button">5</button>
   </div>
 </template>
 
@@ -19,20 +19,10 @@
 <script>
   export default {
     methods: {
-      switchToSticker(sticker) {
-        var image = document.getElementById('toChange');
-        var path = 0;
+      switchTo(number) {
+        var text = document.getElementById('toChange');
 
-        switch(sticker) {
-          case 'default':
-            path='https://drive.google.com/uc?export=download&id=12FmfCxmB_GDVopQ27JM7UBIANl-PRR6I';
-          case 'starry':
-            path='https://drive.google.com/uc?export=download&id=1mVPJaGEap_ENZ7GoXsGJOy4kNqohB78k';
-          case 'lovely':
-            path='https://drive.google.com/uc?export=download&id=1Kk87IZBQv8UyTlLkziUl2UyxYIYw9FLn';
-        }
-
-        image.src=path;
+        text.innerHTML(String(number));
       }
     }
   }
