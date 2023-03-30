@@ -20,12 +20,19 @@
   export default {
     methods: {
       switchToSticker(sticker) {
-        const path = './assets/' + sticker + '.png';
-        console.log(path);
-
         var image = document.getElementById('toChange');
-        const newImage = document.createElement('img', {src: 'path'});
-        image.replaceWith(newImage);
+        var path = 0;
+
+        switch(sticker) {
+          case 'default':
+            path='https://drive.google.com/uc?export=download&id=12FmfCxmB_GDVopQ27JM7UBIANl-PRR6I';
+          case 'starry':
+            path='https://drive.google.com/uc?export=download&id=1mVPJaGEap_ENZ7GoXsGJOy4kNqohB78k';
+          case 'lovely':
+            path='https://drive.google.com/uc?export=download&id=1Kk87IZBQv8UyTlLkziUl2UyxYIYw9FLn';
+        }
+
+        image.src=path;
       }
     }
   }
